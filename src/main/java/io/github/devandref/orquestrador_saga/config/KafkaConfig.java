@@ -15,7 +15,7 @@ import org.springframework.kafka.core.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.github.devandref.orquestrador_saga.enums.ETopic.*;
+import static io.github.devandref.orquestrador_saga.core.enums.ETopic.*;
 
 @EnableKafka
 @Configuration
