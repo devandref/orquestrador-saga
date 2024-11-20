@@ -5,8 +5,10 @@ import io.github.devandref.orquestrador_saga.core.enums.ESagaStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.util.ObjectUtils;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -22,5 +24,12 @@ public class Event {
     private ESagaStatus status;
     private List<History> eventHistory;
     private LocalDateTime createdAt;
+
+    public void addHistory(History history) {
+        if(ObjectUtils.isEmpty(eventHistory)) {
+            this.eventHistory = new ArrayList<>();
+        }
+        eventHistory.add(history);
+    }
 
 }
